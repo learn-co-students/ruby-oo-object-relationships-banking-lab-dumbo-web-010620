@@ -3,14 +3,11 @@ require_relative "bank_account.rb"
 class Transfer
   attr_accessor :amount, :status
   attr_reader :receiver, :sender
-  @@all = []
   def initialize(sender, receiver, amount)
     @sender = sender
     @receiver = receiver
     @status = "pending"
     @amount = amount
-
-    @@all << self
   end
 
   def valid?
@@ -34,11 +31,6 @@ class Transfer
     @receiver.balance -= @amount
     @status = "reversed"
     end
-
-  end
-
-  def self.all
-    @self
   end
 end 
 

@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'bank_account'
 class Transfer
   
@@ -37,7 +36,6 @@ class Transfer
     @receiver.balance -= @amount
     @status = "reversed"
     end
-
   end
 
   def self.all
